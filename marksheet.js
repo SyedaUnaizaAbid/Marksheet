@@ -10,6 +10,21 @@ function calculateResult() {
 		status = "Fail ❌";
 	}
 
+	let grade;
+	if (percentage >= 80) {
+		grade = "A+ 🎉";
+	} else if (percentage >= 70) {
+		grade = "A";
+	} else if (percentage >= 60) {
+		grade = "B";
+	} else if (percentage >= 50) {
+		grade = "C";
+	} else if (percentage >= 40) {
+		grade = "D";
+	} else {
+		grade = "F";
+	}
+
 	document.getElementById("result").innerHTML =
 		"<h2>Result</h2>" +
 		"Total Marks: " +
@@ -22,5 +37,8 @@ function calculateResult() {
 		percentage.toFixed(2) +
 		"%<br>" +
 		"Status: " +
-		status;
+		status +
+		"<br>" +
+		"Grade: " +
+		grade;
 }
